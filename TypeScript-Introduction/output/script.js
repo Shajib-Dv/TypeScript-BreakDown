@@ -45,3 +45,23 @@ obj2 = {
     isAdmin: true,
 };
 console.log(obj2);
+// function
+const summation = (a, b, c = 0) => {
+    return a + b + c;
+};
+const result = summation(1, 2);
+console.log(result);
+const stringConnect = (b, c, a = "Mr.") => {
+    return { fullName: `${a} ${b} ${c}` };
+};
+const getFullName = stringConnect("Shajib", "Hossain");
+console.log(getFullName);
+const sayHello = (user) => {
+    console.log(`Hello ${user.name}`);
+};
+sayHello({ name: "Shajib", age: 23 });
+const sendWish = (id, user) => {
+    const wish = `your id is ${id} wish you ${user.age > 45 ? "Mr." : "Sir"} ${user.name} all the happiness`;
+    console.log(wish);
+};
+sendWish(123, { name: "Shajib", age: 63 });

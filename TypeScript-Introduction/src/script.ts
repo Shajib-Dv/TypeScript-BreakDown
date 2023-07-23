@@ -65,3 +65,39 @@ obj2 = {
 };
 
 console.log(obj2);
+
+// function
+
+const summation = (a: number, b: number, c: number = 0) => {
+  return a + b + c;
+};
+
+const result = summation(1, 2);
+console.log(result);
+
+const stringConnect = (b: string, c: string, a: string = "Mr.") => {
+  return { fullName: `${a} ${b} ${c}` };
+};
+
+const getFullName = stringConnect("Shajib", "Hossain");
+console.log(getFullName);
+
+// type alias
+
+type numOrString = number | string;
+type numOrStringObj = { name: string; age: number };
+
+const sayHello = (user: numOrStringObj) => {
+  console.log(`Hello ${user.name}`);
+};
+
+sayHello({ name: "Shajib", age: 23 });
+
+const sendWish = (id: numOrString, user: numOrStringObj) => {
+  const wish = `your id is ${id} wish you ${user.age > 45 ? "Mr." : "Sir"} ${
+    user.name
+  } all the happiness`;
+  console.log(wish);
+};
+
+sendWish(123, { name: "Shajib", age: 63 });
